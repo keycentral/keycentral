@@ -3,6 +3,8 @@ package common
 import (
 	"fmt"
 
+	"github.com/keycentral/keycentral/lib/service"
+
 	flag "github.com/ogier/pflag"
 )
 
@@ -18,4 +20,7 @@ func Run() {
 	if dbg {
 		fmt.Println("Debug mode")
 	}
+
+	keycentral := service.NewKeyCentral()
+	keycentral.Start()
 }
